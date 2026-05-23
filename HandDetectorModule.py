@@ -1,6 +1,7 @@
 import cv2 as cv
 import mediapipe as mp
 import time 
+import numpy as np
 
 
 mphands = mp.solutions.hands
@@ -60,6 +61,14 @@ class handDetector():
                 fingers.append(0)
 
         return fingers
+
+    def findDistance(self,pt1,pt2):
+        x1,y1 = self.lmlist[pt1][1:]
+        x2,y2 = self.lmlist[pt2][1:]
+
+        dist = np.hypot(x2-x1,y2-y1)
+        return dist
+
     
 
 def main():
