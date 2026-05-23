@@ -49,7 +49,7 @@ class handDetector():
 
     def fingerUp(self):
         fingers=[]
-        if self.lmlist[self.tipids[0]][1] < self.lmlist[self.tipids[0]-1][1]:
+        if self.lmlist[self.tipids[0]][1] > self.lmlist[self.tipids[0]-1][1]:
             fingers.append(1)
         else:
             fingers.append(0)
